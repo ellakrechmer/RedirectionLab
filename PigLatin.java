@@ -7,7 +7,7 @@ public class PigLatin{
       while (l.hasNext()) {
         Scanner w=new Scanner(l.next());
         while (w.hasNext()) {
-          System.out.print(pigLatin(w.next()));
+          System.out.print(pigLatinBest(w.next()));
         }
         if (l.hasNext()) System.out.print(" ");
       }
@@ -38,5 +38,16 @@ public class PigLatin{
       }
     }
     return pigLatinSimple(s);
+  }
+  public static String pigLatinBest(String s){
+    s=s.toLowerCase();
+    char first=s.charAt(0);
+    char last=s.charAt(s.length()-1);
+
+    if (!(97<=first && first<=122)) return s;
+    else if (!((48 <= first && first <= 57) || (97 <= first && first <= 122))){
+      return pigLatin(s.substring(0, s.length() - 1)) + last;
+    }
+    else return pigLatin(s);
   }
 }
