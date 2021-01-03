@@ -45,7 +45,7 @@ public class PigLatin{
     char last=s.charAt(s.length()-1);
 
     if (!(97<=first && first<=122)) return s;
-    else if (!((48 <= first && first <= 57) || (97 <= first && first <= 122))){
+    else if (!((48 <= last && last <= 57) || (97 <= last && last <= 122))){
       return pigLatin(s.substring(0, s.length() - 1)) + last;
     }
     else return pigLatin(s);
