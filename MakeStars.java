@@ -7,13 +7,15 @@ public class MakeStars{
         while (l.hasNext()) {
           Scanner w=new Scanner(l.next());
           while (w.hasNext()) {
-            for (int i=0; i<w.next().length(); i++){
-              System.out.println("*");
+            int len=w.next().length();
+            for (int i=0; i<len; i++){
+              System.out.print("*");
             }
           }
-          if (l.hasNext()) System.out.println(" ");
+          if (l.hasNext()) System.out.print(" ");
         }
         if (n.hasNext()) System.out.println();
       }
+      System.out.println();
   }
 }
